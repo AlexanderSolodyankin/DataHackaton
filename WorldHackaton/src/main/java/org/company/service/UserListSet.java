@@ -2,8 +2,11 @@ package org.company.service;
 
 import org.company.model.Company;
 import org.company.model.Human;
+import org.company.model.Summary;
+import org.company.model.Vacancies;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -24,6 +27,8 @@ public interface UserListSet {
         return mans;
     }
 
+
+
     static List<Company> getLIstCompany(){
         List<Company> companies = new ArrayList<>();
         companies.add(new Company("Парк", "досуг", "общество"));
@@ -37,14 +42,27 @@ public interface UserListSet {
 
     static String getSpecialist (){
         List<Human> man = getListHuman();
-        String outSpecial = man.get(ran.nextInt(man.size())).getProfession();
-        return outSpecial;
+        return man.get(ran.nextInt(man.size())).getProfession();
     }
     static Human getMan(){
         return getListHuman().get(ran.nextInt(getListHuman().size()));
     }
 
+    static Company getCompany(){
+    return getLIstCompany().get(ran.nextInt(getLIstCompany().size()));
+    }
 
+    static Summary getSummary(){
+        return new Summary
+                (new Date(System.currentTimeMillis() + ran.nextInt(900000)), getMan(), ran.nextBoolean());
+    }
+    static Vacancies getVacansies(){
+
+        return new Vacancies
+                (new Date(System.currentTimeMillis() + ran.nextInt(900000)),
+                        "нужен " + getMan().getProfession() ,
+                        ran.nextBoolean(), getCompany());
+    }
 
 
 }

@@ -42,11 +42,11 @@ public class Summary {
 
     @Override
     public String toString() {
-        return "Summary{" +
-                "dateRegister=" + dateRegister +
-                ", man=" + man +
-                ", status=" + status +
-                '}';
+        return "Вакансии {" +
+                "Дата  публикации =" + dateRegister +
+                ", специалист =" + man +
+                ", Ищет работу =" + status +
+                '}' + "<br>";
     }
 }
 

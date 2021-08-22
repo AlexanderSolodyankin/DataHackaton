@@ -1,13 +1,16 @@
 package org.company;
 
-import java.util.Date;
-import java.util.Random;
+import org.company.service.UserListSet;
+
+
 
 public class Main {
     public static void main(String[] args) {
-        Random ran = new Random();
-        new java.sql.Date(new Date().getTime());
-        System.out.println(new Date(System.currentTimeMillis() - ran.nextInt(90000000)));
-        System.out.println(new java.sql.Date(new Date().getTime()));
+
+        for (int i = 0; i < 50; i++) {
+            System.out.println(UserListSet.getCompany());
+            System.out.println(UserListSet.getMan());
+        }
+
     }
 }

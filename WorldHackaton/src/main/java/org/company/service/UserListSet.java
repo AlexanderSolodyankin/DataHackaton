@@ -34,7 +34,7 @@ public interface UserListSet {
         companies.add(new Company("Парк", "досуг", "общество"));
         companies.add(new Company("кафе Айнур", "общепит", "общество"));
         companies.add(new Company("Автоваз", "Машины", "Инженерия"));
-        companies.add(new Company("Район электро станция", "Электричество", "техника"));
+        companies.add(new Company("Районая электро станция", "Электричество", "техника"));
         companies.add(new Company("Физприборы", "Станки", "Инженернерия"));
         companies.add(new Company("СТО", "Техническое обслуживание", "Техника"));
         return companies;

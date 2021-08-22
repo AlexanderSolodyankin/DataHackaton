@@ -51,11 +51,11 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", profession='" + profession + '\'' +
-                ", education='" + education + '\'' +
+        return "{" +
+                "Имя = '" + name + '\'' +
+                ", Возраст =" + age +
+                ", Кем хочет устроится='" + profession + '\'' +
+                ", Оброзование ='" + education + '\'' +
                 '}';
     }
 }

@@ -52,11 +52,11 @@ public class Vacancies {
 
     @Override
     public String toString() {
-        return "Vacancies{" +
-                "dataPublic=" + dataPublic +
-                ", workplaces='" + workplaces + '\'' +
-                ", status=" + status +
-                ", company=" + company +
-                '}';
+        return "Вакансия{" +
+                "Дата публикации =" + dataPublic +
+                ", '" + workplaces + '\'' +
+                ", статс поиска =" + status +
+                ", Имя компании =" + company +
+                '}' + "<br>";
     }
 }

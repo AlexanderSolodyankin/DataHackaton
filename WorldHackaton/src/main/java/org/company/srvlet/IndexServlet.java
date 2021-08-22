@@ -44,13 +44,20 @@ public class IndexServlet extends HttpServlet {
             }
             for (int i = 0; i < ran.nextInt(5); i++) {
                 vacancies.add(new Vacancies(new Date(System.currentTimeMillis() - ran.nextInt(1000000)),
-                        "Требуется работник на позицию: " + UserListSet.getMan().getProfession(),
+                         UserListSet.getMan().getProfession(),
                         ran.nextBoolean(), UserListSet.getCompany()));
             }
         }
+        out = out + summaries + vacancies;
+
+        out = out + "<h1> Количество резюмме и вакансий до анализа </h1> <br>" +
+                "<h2> Вакансий </h2> " + vacancies.size() + "<br>" +
+                "<h2> Резюме <h2>" + summaries.size() + "<br>";
+
         
         for (int i = 0; i < summaries.size(); i++) {
             for (int j = 0; j < vacancies.size(); j++) {
+
                 if(vacancies.get(j).getWorkplaces().equals(summaries.get(i).getMan().getProfession())){
                     vacancies.remove(j);
                     summaries.remove(i);
@@ -58,9 +65,28 @@ public class IndexServlet extends HttpServlet {
             }
 
         }
-        out = out + summaries + vacancies;
 
-        out = out + "<br> <h2> Спрос на рынке вакансий: " + vacancies.size() + " на количество резюме: " + summaries.size();
+
+
+
+
+        out = out + "<br> <h2> Спрос на рынке вакансий: " + vacancies.size() + " на количество резюме: " + summaries.size() + "<br>";
+
+
+        for (int i = 0; i < vacancies.size(); i++) {
+            out = out + vacancies.get(i).getWorkplaces()  +
+                    String.format("%s", vacancies.get(i).getStatus()?" Активна " + "<br>": " Просрочена" + "<br>");
+        }
+
+        out = out + "<h2> Предложения по резюме  </h2> <br> ";
+
+        out = out + "<h2>";
+        for (int i = 0; i < summaries.size(); i++) {
+            out = out + summaries.get(i).getMan().getProfession() + "<br>";
+        }
+        out = out + "</h2>";
+
+
 
         print.println(out);
 

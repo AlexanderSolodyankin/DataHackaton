@@ -59,7 +59,7 @@ public interface UserListSet {
     static Vacancies getVacansies(){
 
         return new Vacancies
-                (new Date(System.currentTimeMillis() + ran.nextInt(900000)),
+                (new Date(System.currentTimeMillis() - ran.nextInt(900000)),
                         "нужен " + getMan().getProfession() ,
                         ran.nextBoolean(), getCompany());
     }

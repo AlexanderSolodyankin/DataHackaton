@@ -65,11 +65,6 @@ public class IndexServlet extends HttpServlet {
             }
 
         }
-
-
-
-
-
         out = out + "<br> <h2> Спрос на рынке вакансий: " + vacancies.size() + " на количество резюме: " + summaries.size() + "<br>";
 
 

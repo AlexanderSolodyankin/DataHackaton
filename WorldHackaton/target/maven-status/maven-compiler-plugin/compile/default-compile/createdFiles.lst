@@ -1,0 +1,8 @@
+org\company\service\UserListSet.class
+org\company\srvlet\IndexServlet.class
+org\company\dao\PostgresDAO.class
+org\company\model\Summary.class
+org\company\Main.class
+org\company\model\Vacancies.class
+org\company\model\Human.class
+org\company\model\Company.class
